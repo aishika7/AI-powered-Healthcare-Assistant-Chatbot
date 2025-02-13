@@ -42,7 +42,8 @@ def main():
     if st.button("Submit"):
         if user_input:
             st.write("User: ", user_input)
-            response = healthcare_chatbot(user_input)
+            with st.spinner("Processing your query. Please wait..."):
+                response = healthcare_chatbot(user_input)
             st.write("Healthcare Assistant: ", response)
         else:
             st.write("Please enter a query.")
